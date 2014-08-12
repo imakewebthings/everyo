@@ -26,13 +26,13 @@ function createYoTimer(account) {
   var timeframe = account.frequency.split(' ')
   var amount = parseInt(timeframe[0], 10)
   var duration = moment.duration.apply(null, [amount, timeframe[1]])
-  setInterval(duration.asMilliseconds(), function() {
-    account.yo.yoAll(function(err, res, body) {
+  setInterval(function() {
+    account.yo.yoall(function(err, res, body) {
       if (err) {
         console.error('Error with %s when trying to Yo', account.name)
       }
     })
-  })
+  }, duration.asMilliseconds())
 }
 
 function loadAccounts() {
