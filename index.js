@@ -4,6 +4,7 @@ var restify = require('restify')
 var moment = require('moment')
 var YoApi = require('yo-api')
 var server = restify.createServer()
+var accounts
 
 function setupServer() {
   server.listen(config.get('PORT'), function() {
@@ -18,6 +19,17 @@ function setupServer() {
     res.send(201, {
       username: req.params.username,
       subscribed: req.params.account
+    })
+  })
+
+  server.get('/', function(req, res, next) {
+    res.send(200, {
+      accounts: _.map(accounts, function(account) {
+        return {
+          name: account.name,
+          frequency: account.frequency
+        }
+      })
     })
   })
 }
@@ -39,7 +51,7 @@ function loadAccounts() {
   var names = config.get('YO_ACCOUNT_NAMES').split(',')
   var apiKeys = config.get('YO_API_KEYS').split(',')
   var frequencies = config.get('YO_FREQUENCIES').split(',')
-  var accounts = _.map(_.zip(names, apiKeys, frequencies), function(values) {
+  accounts = _.map(_.zip(names, apiKeys, frequencies), function(values) {
     return _.zipObject(['name', 'apiKey', 'frequency'], values)
   })
   accounts.forEach(function(account) {
