@@ -44,7 +44,7 @@ function createYoTimer(account) {
         console.error('Error with %s when trying to Yo', account.name)
       }
     })
-  }, duration.asMilliseconds())
+  }, duration.asMilliseconds() | 0)
 }
 
 function loadAccounts() {
