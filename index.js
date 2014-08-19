@@ -19,10 +19,7 @@ accounts.forEach(function(account) {
   agenda.define(account.name, function(job, done) {
     var account = job.attrs.data.account
     console.log('%s sending Yo', account.name)
-    new YoApi(account.apiKey).yo_all(function(err, res, body) {
-      console.log(arguments)
-      done()
-    })
+    new YoApi(account.apiKey).yo_all(done)
   })
   agenda.every(account.frequency, account.name, { account: account })
 })
