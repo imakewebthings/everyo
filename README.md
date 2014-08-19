@@ -13,6 +13,7 @@ Let's start with a statistic. Every 28 hours a police officer or vigilante kills
 ## Setup
 
 1. Setup any accounts necessary with the [Yo dev admin](http://dev.justyo.co/).
+2. Install [mongo](http://www.mongodb.org/) (used by Agenda).
 2. Copy `settings.example.json` to `settings.json`. Fill in values. If you are deploying to Heroku, set them as environment variables instead.
 3. `npm install`
 4. `npm start`
