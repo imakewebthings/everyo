@@ -15,12 +15,14 @@ var accounts = _.map(_.zip(names, apiKeys, frequencies), function(values) {
 
 accounts.forEach(function(account) {
   account.yo = new YoApi(account.apiKey)
-  delete account.apiKey
   console.log('Loading %s set to Yo every %s', account.name, account.frequency)
   agenda.define(account.name, function(job, done) {
     var account = job.attrs.data.account
     console.log('%s sending Yo', account.name)
-    account.yo.yoall(done)
+    new YoApi(account.apiKey).yo_all(function(err, res, body) {
+      console.log(arguments)
+      done()
+    })
   })
   agenda.every(account.frequency, account.name, { account: account })
 })
