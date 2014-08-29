@@ -21,6 +21,7 @@ Let's start with a statistic. Every 28 hours a police officer or vigilante kills
 ## Current Statistics
 
 - COPKILLSUNARMEDBLACK: Every 28 hours a police officer or vigilante [kills an unarmed black person](http://mxgm.org/operation-ghetto-storm-2012-annual-report-on-the-extrajudicial-killing-of-313-black-people/) in the United States.
+- AWOMANISASSAULTED: Every 9 seconds [a woman is battered](http://www.padv.org/documents/Statistics_DV.pdf) in the United States.
 
 ## Adding a Statistic
 
