@@ -1,3 +1,5 @@
+** Everyo is no longer running due to a restructuring of Heroku's dyno pricing model. **
+
 # Everyo
 
 Send "Every X minutes/hours/days" style statistics to subscribers via Yo.
