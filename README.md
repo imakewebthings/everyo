@@ -1,4 +1,4 @@
-** Everyo is no longer running due to a restructuring of Heroku's dyno pricing model. **
+**Everyo is no longer running due to a restructuring of Heroku's dyno pricing model.**
 
 # Everyo
 
